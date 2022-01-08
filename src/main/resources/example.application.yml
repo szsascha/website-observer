@@ -1,0 +1,21 @@
+observer:
+  rate: 10000
+
+notification:
+  telegram:
+    bot:
+      token: "TELEGRAM BOT TOKEN"
+      chatId: "TELEGRAM CHAT ID"
+
+websites:
+  configuration:
+    -
+      url: "https://github.com/szsascha"
+      interval: 30000
+      ignoreExpressions:
+        - "<li class=\"vcard-detail pt-1 css-truncate css-truncate-target hide-sm hide-md\" itemprop=\"twitter\">(.|\n)*?<\\/li>"
+        - "<input type=\"hidden\" data-csrf=\"true\" class=\"js-data-jump-to-suggestions-path-csrf\" value=\"(.|\n)*?\" \\/>"
+        - "<meta name=\"request-id\"(.|\n)*?\\/>"
+        - "<meta name=\"html-safe-nonce\"(.|\n)*?\\/>"
+        - "<meta name=\"visitor-payload\"(.|\n)*?\\/>"
+        - "<meta name=\"visitor-hmac\"(.|\n)*?\\/>"
