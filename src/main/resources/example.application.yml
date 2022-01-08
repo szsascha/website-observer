@@ -1,17 +1,27 @@
 observer:
+  # The rate of the main job is running to observe websites in milliseconds
   rate: 10000
 
 notification:
   telegram:
     bot:
+      # Your Telegram bot token
       token: "TELEGRAM BOT TOKEN"
+      # Your Telegram chat id
       chatId: "TELEGRAM CHAT ID"
 
+# Configure multiple websites to observe
 websites:
   configuration:
     -
+      # Exact website of the url to observe
       url: "https://github.com/szsascha"
+      # Interval to observe the website in milliseconds
       interval: 30000
+      # Regex to exclude some contents for checking.
+      # Some data (e.g. csrf tokens) are changing on each request.
+      # You didn't want to use them in checking because you would get a new notification on each checking.
+      # The expressions are individual for each site. You don't need expressions for some sites.
       ignoreExpressions:
         - "<li class=\"vcard-detail pt-1 css-truncate css-truncate-target hide-sm hide-md\" itemprop=\"twitter\">(.|\n)*?<\\/li>"
         - "<input type=\"hidden\" data-csrf=\"true\" class=\"js-data-jump-to-suggestions-path-csrf\" value=\"(.|\n)*?\" \\/>"
